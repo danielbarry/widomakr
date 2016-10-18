@@ -1,5 +1,7 @@
 package barray.widomakr;
 
+import java.io.File;
+
 /**
  * Main.java
  *
@@ -7,6 +9,8 @@ package barray.widomakr;
  * container for the rest of the program to run safely in.
  **/
 public class Main{
+  private Config config;
+
   /**
    * main()
    *
@@ -42,8 +46,18 @@ public class Main{
         }
       }
     );
-    /* TODO: Read core configuration file. */
-    /* TODO: Read user specified configuration file. */
-    /* TODO: Read command line arguments. */
+    config = new Config();
+    /* Read core configuration file */
+    if(!config.load(new File("default.properties"))){
+      System.exit(0);
+    }
+    /* Read user specified configuration file */
+    if(!config.load(new File("widomakr.properties"))){
+      System.exit(0);
+    }
+    /* Read command line arguments */
+    if(!config.load(args)){
+      System.exit(0);
+    }
   }
 }
