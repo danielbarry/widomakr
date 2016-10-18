@@ -9,12 +9,12 @@
   <property name="main.class" value="barray.widomakr.Main" />
   <property name="main.jar" value="widomakr.jar" />
 
-  <target name="clean" description="Clean Binaries">
+  <target name="clean" description="Clean">
     <delete dir="${build.dir}" />
     <delete dir="${jar.dir}" />
   </target>
 
-  <target name="doc" description="Create Documentation">
+  <target name="doc" description="Documentation">
     <delete dir="${doc.dir}" />
     <mkdir dir="${doc.dir}" />
     <javadoc destdir="${doc.dir}">
@@ -22,12 +22,12 @@
     </javadoc>
   </target>
 
-  <target name="compile" depends="clean" description="Compile Java Code">
+  <target name="compile" depends="clean" description="Compile">
     <mkdir dir="${build.dir}" />
     <javac srcdir="${source.dir}" destdir="${build.dir}" debug="true" includeantruntime="false" />
   </target>
 
-  <target name="jar" depends="compile" description="Create Jar File">
+  <target name="jar" depends="compile" description="Create">
     <mkdir dir="${jar.dir}" />
     <jar destfile="${jar.dir}/${main.jar}" basedir="${build.dir}">
       <manifest>
