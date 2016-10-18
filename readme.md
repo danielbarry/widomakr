@@ -13,3 +13,15 @@ exploits may exist.
 
 The tool has been designed to be operated via the terminal so that it may be
 used easily with other tools to create powerful testing arsenals.
+
+## Installation
+
+For installation, you will require:
+
+  * Git (Repository tool)
+  * Java (JRE - Java runtime environment)
+  * Javac (JDK - Java compiler)
+
+In a directory (such as `widomakr`) you wish to install this program, run:
+
+    git clone git@github.com:danielbarry/widomakr.git
