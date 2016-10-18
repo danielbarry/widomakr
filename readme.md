@@ -33,3 +33,7 @@ changes from the remote repository and recompiling. To do this, simply use:
 
     widomakr update
     widomakr upgrade
+
+## Bugs
+
+We track bugs using the GitHub [issues](/issues) tracking system.
