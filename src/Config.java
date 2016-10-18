@@ -83,4 +83,16 @@ public class Config{
     }
     return buffer;
   }
+
+  /**
+   * getString()
+   *
+   * Get the String from our internal configuration and return it if it exists.
+   *
+   * @param name The name of the property to return.
+   * @return The property's value, otherwise NULL.
+   **/
+  public String getString(String name){
+    return props.getProperty(name);
+  }
 }
