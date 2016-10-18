@@ -5,7 +5,7 @@
     //(__)\\
     ||    ||
 
-*What wicked webs we weave.*
+"*What wicked webs we weave.*"
 
 WidoMakr is web discovery tool written in Java, a collection of tools for
 quickly determining what information can be discovered and where potential
