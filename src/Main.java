@@ -52,12 +52,8 @@ public class Main{
       System.exit(0);
     }
     /* Read user specified configuration file */
-    if(!config.load(new File("widomakr.properties"))){
-      System.exit(0);
-    }
+    config.load(new File("widomakr.properties"));
     /* Read command line arguments */
-    if(!config.load(args)){
-      System.exit(0);
-    }
+    config.load(args);
   }
 }
