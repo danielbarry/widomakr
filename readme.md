@@ -36,4 +36,5 @@ changes from the remote repository and recompiling. To do this, simply use:
 
 ## Bugs
 
-We track bugs using the GitHub [issues](/issues) tracking system.
+We track bugs using the GitHub
+[issues](https://github.com/danielbarry/widomakr) tracking system.
