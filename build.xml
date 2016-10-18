@@ -4,7 +4,7 @@
 
   <property name="source.dir" location="src/" />
   <property name="build.dir" location="bin/" />
-  <property name="jar.dir" location="dist/" />
+  <property name="jar.dir" location="./" />
   <property name="doc.dir" location="doc/" />
   <property name="main.class" value="barray.widomakr.Main" />
   <property name="main.jar" value="widomakr.jar" />
