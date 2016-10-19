@@ -34,6 +34,10 @@ In a directory (such as `widomakr`) you wish to install this program, run:
 
     git clone git@github.com:danielbarry/widomakr.git
 
+For the first run, please run:
+
+    ant
+
 ## Updating/Upgrading
 
 This program uses Git to update itself which requires pulling in all of the
