@@ -1,6 +1,12 @@
 package barray.widomakr.module;
 
 import barray.widomakr.Config;
+import barray.widomakr.module.about.About;
+import barray.widomakr.module.help.Help;
+import barray.widomakr.module.run.Run;
+import barray.widomakr.module.update.Update;
+import barray.widomakr.module.upgrade.Upgrade;
+import barray.widomakr.module.version.Version;
 
 /**
  * Module.java
@@ -19,7 +25,8 @@ public class Module{
     HELP,
     RUN,
     UPDATE,
-    UPGRADE
+    UPGRADE,
+    VERSION
   }
 
   private Thread module;
@@ -43,19 +50,22 @@ public class Module{
     /* Check for the module */
     switch(runMode){
       case ABOUT :
-        /* TODO: Handle the case. */
+        module = new About(config);
         break;
       case HELP :
-        /* TODO: Handle the case. */
+        module = new Help(config);
         break;
       case RUN :
-        /* TODO: Handle the case. */
+        module = new Run(config);
         break;
       case UPDATE :
-        /* TODO: Handle the case. */
+        module = new Update(config);
         break;
       case UPGRADE :
-        /* TODO: Handle the case. */
+        module = new Upgrade(config);
+        break;
+      case VERSION :
+        module = new Version(config);
         break;
       default :
         /* TODO: Handle the problem case. */
@@ -69,6 +79,6 @@ public class Module{
    * Allows the module that has been loaded to be run.
    **/
   public void run(){
-    /* TODO: Remove me. */
+    module.run();
   }
 }
