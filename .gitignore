@@ -1,3 +1,4 @@
 # Ignore file extensions
 *.class
 *.jar
+*.swp
