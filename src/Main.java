@@ -1,5 +1,6 @@
 package barray.widomakr;
 
+import barray.widomakr.module.Module;
 import java.io.File;
 
 /**
@@ -9,20 +10,6 @@ import java.io.File;
  * container for the rest of the program to run safely in.
  **/
 public class Main{
-  /**
-   * RUN_MODE
-   *
-   * A simple enumerator that describes the mode that has been requested to
-   * run.
-   **/
-  private enum RUN_MODE{
-    ABOUT,
-    HELP,
-    RUN,
-    UPDATE,
-    UPGRADE
-  }
-
   private Config config;
 
   /**
@@ -69,12 +56,8 @@ public class Main{
     config.load(new File("widomakr.properties"));
     /* Read command line arguments */
     config.load(args);
-    /* Check for standard operation command */
-    RUN_MODE runMode = RUN_MODE.valueOf(config.getString("default_run_mode"));
-    for(RUN_MODE rm : RUN_MODE.values()){
-      if(config.getString(rm.toString().toLowerCase()) != null){
-        runMode = rm;
-      }
-    }
+    /* Initialise and run the module */
+    Module module = new Module(config);
+    module.run();
   }
 }
