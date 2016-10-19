@@ -9,6 +9,20 @@ import java.io.File;
  * container for the rest of the program to run safely in.
  **/
 public class Main{
+  /**
+   * RUN_MODE
+   *
+   * A simple enumerator that describes the mode that has been requested to
+   * run.
+   **/
+  private enum RUN_MODE{
+    ABOUT,
+    HELP,
+    RUN,
+    UPDATE,
+    UPGRADE
+  }
+
   private Config config;
 
   /**
