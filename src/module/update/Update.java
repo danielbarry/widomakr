@@ -1,6 +1,7 @@
 package barray.widomakr.module.update;
 
 import barray.widomakr.Config;
+import barray.widomakr.tools.Git;
 
 /**
  * Update.java
@@ -27,6 +28,12 @@ public class Update extends Thread{
    * Allows the main program to be run.
    **/
   public void run(){
-    /* TODO: Write this section. */
+    Git git = new Git(config);
+    System.out.print("Update... ");
+    if(git.isAvailable() && git.update()){
+      System.out.println(config.getString("okay_msg"));
+    }else{
+      System.out.println(config.getString("error_msg"));
+    }
   }
 }
