@@ -69,5 +69,7 @@ public class Main{
     config.load(new File("widomakr.properties"));
     /* Read command line arguments */
     config.load(args);
+    /* Check for standard operation command */
+    RUN_MODE runMode = RUN_MODE.valueOf(config.getString("default_run_mode"));
   }
 }
