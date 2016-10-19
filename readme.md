@@ -14,13 +14,21 @@ exploits may exist.
 The tool has been designed to be operated via the terminal so that it may be
 used easily with other tools to create powerful testing arsenals.
 
-## Installation
+## Pre-Requisites
 
 For installation, you will require:
 
+  * Ant (Java build system)
   * Git (Repository tool)
   * Java (JRE - Java runtime environment)
   * Javac (JDK - Java compiler)
+
+### Linux
+
+    sudo apt-get update
+    sudo apt-get install ant git openjdk-8-jre openjdk-8-jdk
+
+## Installation
 
 In a directory (such as `widomakr`) you wish to install this program, run:
 
