@@ -38,6 +38,8 @@ For the first run, please run:
 
     ant
 
+Assuming the build is successful, you should now be able to run the program.
+
 ## Updating/Upgrading
 
 This program uses Git to update itself which requires pulling in all of the
