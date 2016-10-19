@@ -13,7 +13,7 @@ import barray.widomakr.module.version.Version;
  *
  * Handles the module requests and gets the system running correctly.
  **/
-public class Module{
+public class Module extends Thread{
   /**
    * RUN_MODE
    *
