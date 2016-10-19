@@ -48,6 +48,10 @@ changes from the remote repository and recompiling. To do this, simply use:
     widomakr update
     widomakr upgrade
 
+## Documentation
+
+**TODO:** Write documentation on how to use the program.
+
 ## Bugs
 
 We track bugs using the GitHub
