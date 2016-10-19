@@ -71,5 +71,10 @@ public class Main{
     config.load(args);
     /* Check for standard operation command */
     RUN_MODE runMode = RUN_MODE.valueOf(config.getString("default_run_mode"));
+    for(RUN_MODE rm : RUN_MODE.values()){
+      if(config.getString(rm.toString().toLowerCase()) != null){
+        runMode = rm;
+      }
+    }
   }
 }
