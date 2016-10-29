@@ -1,4 +1,5 @@
 # Ignore file extensions
 *.class
+*.html
 *.jar
 *.swp
