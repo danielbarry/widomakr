@@ -10,6 +10,8 @@ import java.io.File;
  * container for the rest of the program to run safely in.
  **/
 public class Main{
+  private static final String CONFIG_CORE = "default.properties";
+  private static final String CONFIG_USER = "widomakr.properties";
   private Config config;
 
   /**
@@ -49,11 +51,11 @@ public class Main{
     );
     config = new Config();
     /* Read core configuration file */
-    if(!config.load(new File("default.properties"))){
+    if(!config.load(new File(CONFIG_CORE))){
       error("No core configuration found `" + CONFIG_CORE + "`");
     }
     /* Read user specified configuration file */
-    config.load(new File("widomakr.properties"));
+    config.load(new File(CONFIG_USER));
     /* Read command line arguments */
     config.load(args);
     /* Initialise and run the module */
