@@ -8,7 +8,6 @@ import barray.widomakr.Config;
  * Runs a module of the program.
  **/
 public class Run extends Thread{
-  private Config config;
 
   /**
    * Run()
@@ -18,7 +17,6 @@ public class Run extends Thread{
    * @param config The configuration file containing the settings.
    **/
   public Run(Config config){
-    this.config = config;
   }
 
   /**
