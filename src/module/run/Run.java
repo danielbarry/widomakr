@@ -58,6 +58,8 @@ public class Run extends Thread{
    * Allows the main program to be run.
    **/
   public void run(){
-    /* TODO: Write this section. */
+    if(module != null){
+      module.run();
+    }
   }
 }
