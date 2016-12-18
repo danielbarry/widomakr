@@ -1,6 +1,7 @@
 package barray.widomakr.module;
 
 import barray.widomakr.Config;
+import barray.widomakr.Main;
 import barray.widomakr.module.about.About;
 import barray.widomakr.module.help.Help;
 import barray.widomakr.module.run.Run;
@@ -68,7 +69,7 @@ public class Module extends Thread{
         module = new Version(config);
         break;
       default :
-        /* TODO: Handle the problem case. */
+        Main.error("FATAL: Shpould not be possible to reach here");
         break;
     }
   }
