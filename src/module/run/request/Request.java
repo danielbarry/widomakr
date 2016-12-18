@@ -2,6 +2,7 @@ package barray.widomakr.module.run.request;
 
 import barray.widomakr.Config;
 import barray.widomakr.Main;
+import barray.widomakr.utils.Packet;
 
 /**
  * Request.java
@@ -40,7 +41,29 @@ public class Request extends Thread{
    * Allows the main program to be run.
    **/
   public void run(){
-    /* TODO: Send increasingly larger packets to the server. */
-    /* TODO: Output report. */
+    /* Test server bounds by increasing packet size */
+    String insertion = "@";
+    Packet packet = new Packet(ip, port, 100000, 100000000);
+    packet.setOutputData("GET " + insertion + " HTTP/1.0\n\r\n\r\n\r");
+    packet.start();
+    while(!packet.complete());
+    String control = packet.getInputData();
+    int maxSize = 1;
+    for(;;){
+      System.out.print(".");
+      packet = new Packet(ip, port, 100000, 100000000);
+      packet.setOutputData("GET " + insertion + " HTTP/1.0\n\r\n\r\n\r");
+      packet.start();
+      while(!packet.complete());
+      String reply = packet.getInputData();
+      if(control.equals(reply)){
+        break;
+      }
+      insertion += "@";
+      maxSize++;
+    }
+    System.out.println("");
+    /* Output report */
+    System.out.println("maxSize: " + maxSize);
   }
 }
