@@ -8,6 +8,17 @@ import barray.widomakr.Config;
  * Runs a module of the program.
  **/
 public class Run extends Thread{
+  /**
+   * RUN_MODE
+   *
+   * A simple enumerator that describes the program that is required to be run.
+   **/
+  private enum RUN_PROG{
+    NONE,
+    REQUEST
+  }
+
+  private Thread module;
 
   /**
    * Run()
@@ -17,6 +28,26 @@ public class Run extends Thread{
    * @param config The configuration file containing the settings.
    **/
   public Run(Config config){
+    module = null;
+    /* Check for standard operation command */
+    RUN_PROG runProg = RUN_PROG.valueOf(config.getString("prog"));
+    for(RUN_PROG rp : RUN_PROG.values()){
+      if(config.getString(rp.toString().toLowerCase()) != null){
+        runProg = rp;
+      }
+    }
+    /* Check for the program to be run */
+    switch(runProg){
+      case NONE :
+        /* Do nothing */
+        break;
+      case REQUEST :
+        module = new Request(config);
+        break;
+      default :
+        Main.error("FATAL: Shpould not be possible to reach here");
+        break;
+    }
   }
 
   /**
