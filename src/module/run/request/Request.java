@@ -1,6 +1,7 @@
 package barray.widomakr.module.run.request;
 
 import barray.widomakr.Config;
+import barray.widomakr.Main;
 
 /**
  * Request.java
@@ -18,8 +19,16 @@ public class Request extends Thread{
    * @param config The configuration file containing the settings.
    **/
   public Request(Config config){
-    /* TODO: Check that we have a server to run a test against. */
-    /* TODO: Check that we have a port to run a test against. */
+    /* Check for server IP */
+    String ip = config.getString("ip");
+    if(ip == null){
+      Main.error("No IP address found");
+    }
+    /* Check for server port */
+    String port = config.getString("port");
+    if(port == null){
+      Main.error("No port found");
+    }
   }
 
   /**
