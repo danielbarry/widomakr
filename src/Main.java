@@ -60,4 +60,16 @@ public class Main{
     Module module = new Module(config);
     module.run();
   }
+
+  /**
+   * error()
+   *
+   * Displays an error and then safely quits the program.
+   *
+   * @param msg The message to be displayed.
+   **/
+  public static void error(String msg){
+    System.err.println("[!!] " + msg);
+    System.exit(0);
+  }
 }
