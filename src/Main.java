@@ -50,7 +50,7 @@ public class Main{
     config = new Config();
     /* Read core configuration file */
     if(!config.load(new File("default.properties"))){
-      System.exit(0);
+      error("No core configuration found `" + CONFIG_CORE + "`");
     }
     /* Read user specified configuration file */
     config.load(new File("widomakr.properties"));
