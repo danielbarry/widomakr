@@ -81,6 +81,8 @@ public class Module extends Thread{
    * Allows the module that has been loaded to be run.
    **/
   public void run(){
-    module.run();
+    if(module != null){
+      module.run();
+    }
   }
 }
