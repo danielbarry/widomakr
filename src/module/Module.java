@@ -41,6 +41,7 @@ public class Module extends Thread{
    * commands to be run.
    **/
   public Module(Config config){
+    module = null;
     /* Check for standard operation command */
     RUN_MODE runMode = RUN_MODE.valueOf(config.getString("mode"));
     for(RUN_MODE rm : RUN_MODE.values()){
