@@ -11,6 +11,9 @@ import barray.widomakr.Main;
  * the largest possible request, accepted chracters, timeouts, etc.
  **/
 public class Request extends Thread{
+  private String ip;
+  private String port;
+
   /**
    * Request()
    *
@@ -20,12 +23,12 @@ public class Request extends Thread{
    **/
   public Request(Config config){
     /* Check for server IP */
-    String ip = config.getString("ip");
+    ip = config.getString("ip");
     if(ip == null){
       Main.error("No IP address found");
     }
     /* Check for server port */
-    String port = config.getString("port");
+    port = config.getString("port");
     if(port == null){
       Main.error("No port found");
     }
