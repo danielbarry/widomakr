@@ -42,28 +42,42 @@ public class Request extends Thread{
    **/
   public void run(){
     /* Test server bounds by increasing packet size */
-    String insertion = "@";
-    Packet packet = new Packet(ip, port, 100000, 100000000);
-    packet.setOutputData("GET " + insertion + " HTTP/1.0\n\r\n\r\n\r");
+    Packet packet = new Packet(ip, port, 0, 1000);
+    packet.setOutputData("GET /a HTTP/1.0\r\n\r\n");
     packet.start();
     while(!packet.complete());
-    String control = packet.getInputData();
-    int maxSize = 1;
-    for(;;){
-      System.out.print(".");
-      packet = new Packet(ip, port, 100000, 100000000);
-      packet.setOutputData("GET " + insertion + " HTTP/1.0\n\r\n\r\n\r");
+    String control = packet.getInputData().split("\n\r")[1];
+    int x = 2;
+    int c = 1;
+    for(; x < 65536; x += c){
+      System.out.print('.');
+      packet = new Packet(ip, port, 0, 1000);
+      String insertion = '/' + timesChar('a', x - 1);
+      packet.setOutputData("GET " + insertion + " HTTP/1.0\r\n\r\n");
       packet.start();
       while(!packet.complete());
-      String reply = packet.getInputData();
-      if(control.equals(reply)){
-        break;
+      String reply = packet.getInputData().split("\n\r")[1];
+      if(!control.equals(reply)){
+        if(c == 1){
+          break;
+        }else{
+          x -= c;
+          c = 1;
+        }
+      }else{
+        c *= 2;
       }
-      insertion += "@";
-      maxSize++;
     }
     System.out.println("");
     /* Output report */
-    System.out.println("maxSize: " + maxSize);
+    System.out.println("Max Size: " + x);
+  }
+
+  private String timesChar(char chr, int size){
+    String buffer = "";
+    for(int x = 0; x < size; x++){
+      buffer += chr;
+    }
+    return buffer;
   }
 }
