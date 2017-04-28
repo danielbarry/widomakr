@@ -57,3 +57,5 @@ the software.
 
 We track bugs and feature requests using the GitHub
 [issues](https://github.com/danielbarry/widomakr/issues) tracking system.
+
+Please read [here](wiki/rules.md) regarding expected etiquette.
