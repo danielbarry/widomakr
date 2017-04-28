@@ -29,8 +29,8 @@ public class Upgrade extends Thread{
    * Allows the main program to be run.
    **/
   public void run(){
-    Git git = new Git(config);;
-    Ant ant = new Ant(config);;
+    Git git = new Git(config);
+    Ant ant = new Ant(config);
     System.out.print("Upgrade... ");
     if(git.isAvailable() && git.upgrade() && ant.build()){
       System.out.println(config.getString("okay_msg"));
