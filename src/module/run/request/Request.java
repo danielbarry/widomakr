@@ -47,6 +47,7 @@ public class Request extends Thread{
     packet.start();
     while(!packet.complete());
     String control = packet.getInputData().split("\n\r")[1];
+    int m = 0;
     int x = 2;
     int c = 1;
     for(; x < 65536; x += c){
@@ -59,6 +60,7 @@ public class Request extends Thread{
       String reply = packet.getInputData().split("\n\r")[1];
       if(!control.equals(reply)){
         if(c == 1){
+          m = packet.getOutputData().length;
           break;
         }else{
           x -= c;
@@ -68,9 +70,9 @@ public class Request extends Thread{
         c *= 2;
       }
     }
-    System.out.println("");
     /* Output report */
-    System.out.println("Max Size: " + x);
+    System.out.println("");
+    System.out.println("Max Size: " + m);
   }
 
   private String timesChar(char chr, int size){
