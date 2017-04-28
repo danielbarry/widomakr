@@ -60,3 +60,12 @@ options from the command line:
     widomakr help
 
 You should now see a list of commands that can be run.
+
+## Run
+
+### Packet Request
+
+**Description:** Testing the number of bytes a client will accept before
+rejecting a web request. This is done in the form of `GET /<DATA> HTTP/1.0`.
+
+    widomakr run request ip=<DOMAIN/IP ADDRESS> port=<PORT>
