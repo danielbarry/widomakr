@@ -78,6 +78,17 @@ public class Packet extends Thread{
   }
 
   /**
+   * getOutputData()
+   *
+   * Gets the output data, byte for byte as it will be sent over the socket.
+   *
+   * @return The data to be sent.
+   **/
+  public byte[] getOutputData(){
+    return output;
+  }
+
+  /**
    * getInputData()
    *
    * Gets the input data, byte for byte as it will be sent over the socket.
