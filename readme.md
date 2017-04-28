@@ -50,7 +50,7 @@ changes from the remote repository and recompiling. To do this, simply use:
 
 ## Documentation
 
-Please read [here](wiki/documentation.md) regarding further documentation of
+Please read [here](docs/wiki/documentation.md) regarding further documentation of
 the software.
 
 ## Bugs/Features
@@ -58,4 +58,4 @@ the software.
 We track bugs and feature requests using the GitHub
 [issues](https://github.com/danielbarry/widomakr/issues) tracking system.
 
-Please read [here](wiki/rules.md) regarding expected etiquette.
+Please read [here](docs/wiki/rules.md) regarding expected etiquette.
