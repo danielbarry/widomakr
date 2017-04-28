@@ -51,3 +51,12 @@ changes from the remote repository and recompiling. To do this, simply use:
 
     widomakr update
     widomakr upgrade
+
+### Use
+
+To get started, simply run the following command for a list of available
+options from the command line:
+
+    widomakr help
+
+You should now see a list of commands that can be run.
