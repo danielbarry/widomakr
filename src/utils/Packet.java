@@ -108,7 +108,7 @@ public class Packet extends Thread{
    *
    * Send the packet with the information set, wait for a reply and store that
    * information. After doing so, raise a flag to indicate that the
-   * communiction is complete.
+   * communication is complete.
    **/
   public void run(){
     try{

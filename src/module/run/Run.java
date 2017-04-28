@@ -47,7 +47,7 @@ public class Run extends Thread{
         module = new Request(config);
         break;
       default :
-        Main.error("FATAL: Shpould not be possible to reach here");
+        Main.error("FATAL: Should not be possible to reach here");
         break;
     }
   }
