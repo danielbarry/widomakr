@@ -50,7 +50,8 @@ changes from the remote repository and recompiling. To do this, simply use:
 
 ## Documentation
 
-**TODO:** Write documentation on how to use the program.
+Please read [here](wiki/documentation.md) regarding further documentation of
+the software.
 
 ## Bugs
 
