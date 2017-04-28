@@ -64,9 +64,9 @@ For a feature request, the following body is required:
 
     # Acceptance Criteria
 
-    `[ ]` (First item that signifies the issue is completed)
+    * `[ ]` (First item that signifies the issue is completed)
     (...)
-    `[ ]` (Last item)
+    * `[ ]` (Last item)
 
 **Developers:** Please read the "Tasks" section.
 
@@ -82,9 +82,9 @@ assigned:
 
     # Tasks
 
-    `[ ]` (First task)
+    * `[ ]` (First task)
     (...)
-    `[ ]` (Last task)
+    * `[ ]` (Last task)
 
     # Regression Testing
 
